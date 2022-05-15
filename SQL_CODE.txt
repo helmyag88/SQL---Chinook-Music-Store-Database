@@ -1,0 +1,57 @@
+-- SQL-Project Submission - Ahmed Gamal Helmy
+
+-- Question (1)
+-- The total number of sales per employee
+
+SELECT  C.SupportRepId, E.FirstName, E.LastName,sum(I.total) AS Total_Sales
+FROM Invoice AS I
+LEFT JOIN Customer AS C
+ON C.CustomerId=I.CustomerId
+LEFT JOIN Employee AS E
+ON E.EmployeeId=C.SupportRepId
+group by C.SupportRepId
+ORDER by total_sales DESC;
+
+-- Question (2)
+-- Total number of albums and tracks per genre
+
+SELECT  G.name, COUNT(DISTINCT B.Title) AS Album_Number, COUNT(DISTINCT T.Name) AS Track_Number
+FROM Track AS T
+JOIN ALBUM AS B
+ON B.AlbumId=T.AlbumId
+JOIN Genre AS G
+ON T.GenreId=G.GenreId
+GROUP BY G.Name
+ORDER BY Album_Number DESC
+LIMIT 10;
+
+-- Question (3)
+-- TOP 10 Genres , in Terms of Sales
+
+SELECT G.Name AS 'Genre', SUM (IL.UnitPrice * IL.Quantity) as 'Genre_Total_Sales'
+FROM InvoiceLine AS IL
+JOIN Track AS T
+ON IL.TrackId=T.TrackId
+JOIN Genre AS G
+ON G.GenreId=T.GenreId
+GROUP BY G.Name
+ORDER BY Genre_Total_Sales DESC
+LIMIT 10;
+
+-- Question (4)
+-- Top 10 Top "Pop/Hip Hop/ Rap/ R&B/ Soul/Blues" Artists , in terms of Total_Spent
+
+SELECT A.Name AS 'Artist_Name',SUM(IL.UnitPrice * IL.Quantity) AS 'Total_Spent', G.Name AS Genre
+FROM InvoiceLine AS IL
+JOIN Track AS T
+ON T.TrackId=IL.TrackId
+JOIN Genre as G
+ON G.GenreId=T.GenreId
+JOIN ALBUM AS B
+ON B.AlbumId=T.AlbumId
+JOIN Artist AS A
+ON A.ArtistId = B.ArtistId
+where G.GenreId=17 or G.GenreId=9 or G.GenreId=14 OR G.GenreId=6
+GROUP BY A.Name
+ORDER BY Total_Spent DESC
+LIMIT 10;
