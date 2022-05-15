@@ -10,3 +10,11 @@ that link tables together via the arrows.
 
 ![image](https://user-images.githubusercontent.com/82735161/168489669-1cd498f5-f4df-40b5-81be-b70fb7416362.png)
 
+The project is to make presentation to summarize datasets included
+
+Your presentation should include:
+
+Four slides
+One visualization per slide
+A 1-2 sentence explanation of each slide
+The SQL query is used to create the data used in the visualization.
