@@ -18,3 +18,6 @@ Four slides
 One visualization per slide
 A 1-2 sentence explanation of each slide
 The SQL query is used to create the data used in the visualization.
+[SQL_CODE.txt](https://github.com/helmyag88/SQL---Chinook-Music-Store-Database/files/8695759/SQL_CODE.txt)
+[PROJECT _SQL.xlsx](https://github.com/helmyag88/SQL---Chinook-Music-Store-Database/files/8695760/PROJECT._SQL.xlsx)
+[SQL Project Presentation.pdf](https://github.com/helmyag88/SQL---Chinook-Music-Store-Database/files/8695761/SQL.Project.Presentation.pdf)
